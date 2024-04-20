@@ -1,0 +1,67 @@
+.card {
+    max-width: 400px;
+  }
+  
+  .header-image {
+    /* background-image: url("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png"); */
+    background-size: cover;
+  }
+
+  .card{
+    color: black;
+  }
+
+  .login{
+    color: red;
+  }
+
+
+  #header{
+    display: flex;
+    /* margin-top: 10px; */
+    padding: 16px 8px;
+    background-color: #fb4d06;
+  }
+
+#header-title{
+  margin-left: 10px; 
+
+}
+#img-container{
+  margin-right: 10px;
+  border-top-color:  black;
+  border-bottom-color:  black;
+}
+
+#image{
+  width: 60px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background-color: #cccccc;
+
+  
+}
+
+
+#title{
+  margin-bottom: 0px !important;
+  font-weight: bold;
+}
+
+#subtitule{
+  margin-bottom: 2px !important;
+}
+
+#main-image{
+  min-width: 300px;
+  max-width: 300px;
+}
+
+#main-image{
+
+  margin-bottom: 16px;
+}
+
+mat-card-content {
+  margin-bottom: 10px;
+}

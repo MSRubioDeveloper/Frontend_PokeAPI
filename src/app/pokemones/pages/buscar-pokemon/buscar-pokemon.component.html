@@ -1,0 +1,24 @@
+<div id="header">
+    <h1 >Buscar Pokemon </h1>
+  </div>
+
+
+<div id="searchInput">
+    <form [formGroup]="searchForm" (ngSubmit)="searchById( id.value)">
+        <p-inputGroup>
+            <input #id formControlName="pokemon_id" id="helper-input" type="text" pInputText placeholder="Keyword" />
+            <button type="submit" pButton icon="pi pi-search" class="p-button-warning" id="helper"></button>
+        </p-inputGroup>
+        
+    </form>
+</div>
+
+<div class="cards-container mt-5 mb-4" id="helper2" >
+    <pokemon-card *ngIf="pokemonsFounded"
+    [pokemon]="pokemonsFounded" [headerImage]="pokemonsFounded.sprites.front_shiny"
+    ></pokemon-card>
+</div>
+
+<div *ngIf="!pokemonsFounded" class="alert alert-warning" role="alert">
+   Busca un pokemon por ID / Nombre...
+  </div>

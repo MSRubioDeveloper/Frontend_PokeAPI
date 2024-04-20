@@ -1,0 +1,82 @@
+<div id="header" *ngIf="pokemonsFounded" >
+    <h1 >  {{ pokemonsFounded.name | uppercase }} </h1>
+  </div>
+
+
+
+<div  id="container" *ngIf="pokemonsFounded">
+
+            <mat-card>
+                <div class="">
+                    <img id="imgMain" mat-card-image [src]="pokemonsFounded.sprites.front_default" alt="">
+                </div>
+            </mat-card>
+           
+            <mat-card>
+            <p-accordion multiple="true"  >
+                <p-accordionTab header="Caracteristicas">
+                    <ul id="information">
+                        <li> <strong>ID Pokemon:</strong>  {{ pokemonsFounded.id}} </li>
+                        <li> <strong>Nombre pokemon:</strong>  {{ pokemonsFounded.name}} </li>
+                        <li> <strong>Experiencia base:</strong>  {{ pokemonsFounded.base_experience }}  </li>
+                        <li> <strong>Peso:</strong>  {{ pokemonsFounded.weight }} Kg  </li>
+                        <li> <strong> Altura:  </strong>  {{ pokemonsFounded.height }}  </li>
+    
+                    </ul>
+                </p-accordionTab>
+                <p-accordionTab header="Sprites">
+                        <div>
+                            <img *ngIf="pokemonsFounded.sprites.front_default" [src]="pokemonsFounded.sprites.front_default" [alt]="pokemonsFounded.id">
+                            <img *ngIf="pokemonsFounded.sprites.front_female" [src]="pokemonsFounded.sprites.front_female" [alt]="pokemonsFounded.id">
+                            <img *ngIf="pokemonsFounded.sprites.front_shiny" [src]="pokemonsFounded.sprites.front_shiny" [alt]="pokemonsFounded.id">
+                            <img *ngIf="pokemonsFounded.sprites.front_shiny_female" [src]="pokemonsFounded.sprites.front_shiny_female" [alt]="pokemonsFounded.id">
+                            <img *ngIf="pokemonsFounded.sprites.back_default" [src]="pokemonsFounded.sprites.back_default" [alt]="pokemonsFounded.id">
+                            <img *ngIf="pokemonsFounded.sprites.back_female" [src]="pokemonsFounded.sprites.back_female" [alt]="pokemonsFounded.id">
+                            <img *ngIf="pokemonsFounded.sprites.back_shiny" [src]="pokemonsFounded.sprites.back_shiny" [alt]="pokemonsFounded.id">
+                            <img *ngIf="pokemonsFounded.sprites.back_shiny_female" [src]="pokemonsFounded.sprites.back_shiny_female" [alt]="pokemonsFounded.id">
+                        </div>
+                </p-accordionTab>
+                <p-accordionTab header="Habilidades">
+                    <mat-card id="mat-card-ability" class="p-2 mb-4 mt-2" *ngFor="let ability of pokemonsFounded.abilities" >
+                      <div id="ability-container" >
+                        <p>{{ability.ability.name}}</p>
+                        <p>Slots: {{ability.slot}}</p>
+                        <p>
+                            <button mat-flat-button color="primary" (click)="openCommentsDialog( ability.ability.url )">
+                                <mat-icon>add</mat-icon>
+                                Inf
+                            </button>
+                        </p>
+                      </div>
+                    </mat-card>
+
+                    <!-- <p-table [value]="pokemonsFounded.abilities" styleClass="p-datatable-gridlines" >
+
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>name</th>
+                                <th>slots</th>
+                                <th>Info</th>
+  
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-ability>
+                            <tr>
+                                <td>{{ ability.ability.name }} </td>
+                                <td>{{ ability.ability.slot }} </td>
+                                <td>
+                                    <button mat-flat-button color="primary" (click)="openCommentsDialog( ability.ability.url )">
+                                        <mat-icon>add</mat-icon>
+                                        Inf
+                                    </button>
+                                </td>
+     
+                            </tr>
+                        </ng-template>
+                    </p-table> -->
+
+                </p-accordionTab>
+            </p-accordion>
+        </mat-card>
+
+</div>

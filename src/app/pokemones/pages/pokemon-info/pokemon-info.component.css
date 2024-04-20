@@ -1,0 +1,56 @@
+#container{
+    padding: 20px;
+    background-color: white;
+    color: black;
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    border: 2px solid black;
+
+}
+
+#imgMain{
+    width: 400px;
+}
+#header h1{
+    text-align: center;
+    padding: 15px;
+    font-size: 46px;
+    line-height: 1.7;
+
+    margin-bottom: 70px !important;
+}
+
+
+.information{
+    padding: 15px;
+    margin-left: 30px;
+    padding-left: 40px;
+    border-left: 1px solid black;
+}
+
+.information li{
+    margin-bottom: 15px;
+}
+
+#ability-container{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#mat-card-ability{
+    background-color: rgb(243, 242, 242);
+}
+
+
+@media screen and (max-width: 967px) {
+    #container{
+        flex-direction: column;
+    }
+
+    #imgMain{
+        width: 100%;
+    }
+}

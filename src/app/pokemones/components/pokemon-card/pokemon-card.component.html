@@ -1,0 +1,30 @@
+<mat-card class="card" *ngIf="pokemon">
+
+
+    <div id="header">
+      <div class="img-container">
+        <img  (load)="onLoad()" id="image" [src]="pokemon.sprites.front_shiny" [alt]="pokemon.id">
+      </div>
+      <div id="header-title">
+        <h3 id="title">{{ pokemon.name | uppercase }} </h3>
+        <p id="subtitule">  ID: {{ pokemon.id}} </p>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <img class="animate__animated animate__fadeIn"  mat-card-image id="main-image" [ngStyle]="{ display: hasLoaded ? '' : 'none'}" (load)="onLoad()" [src]="pokemon.sprites.front_default" [alt]="pokemon.id">
+
+    <img *ngIf="!hasLoaded"  src="../../../../assets/loaders/loader.svg" alt="">
+
+    <mat-card-content class="mt-3">
+      <p>
+            El pokemon {{pokemon.name }} con el Numero: <strong class="login"> {{ pokemon.id }} </strong>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-flat-button color="primary mr-2 mt-3" (click)="information()">
+            <i class="pi pi-eye"></i>           
+        </button>
+    </mat-card-actions>
+  </mat-card>

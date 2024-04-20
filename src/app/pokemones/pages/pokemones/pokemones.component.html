@@ -1,0 +1,24 @@
+<mat-card id="header">
+    <h1>Pokemones</h1>
+
+
+
+   <div id="btn-container">
+       <div>
+        <p-button (onClick)="get50Pokemons( -50 )" label="Anterior" severity="info"></p-button>
+       </div>
+        <div>
+            <p-button (onClick)="get50Pokemons( 50 )" label="Siguiente" severity="info"></p-button>
+        </div>
+   </div>
+</mat-card>
+
+
+
+<mat-card id="mat-card-pokemons">
+    <div id="container-card">
+        <pokemon-card *ngFor="let pokemon of pokemones"
+                [pokemon]="pokemon" [headerImage]="pokemon.sprites.front_shiny"
+        ></pokemon-card> 
+    </div>
+</mat-card>

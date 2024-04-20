@@ -1,0 +1,35 @@
+
+    <div *ngIf="abilityInfo" id="general-container">
+
+       <div id="img_sprite_main_container" >
+            <img id="img_sprite_main"  [src]="url_sprite" alt="">
+       </div>
+
+        <mat-card id="ability_id" class="mt-3 mb-3">
+            <p><strong>Habilidad ID:</strong> {{ abilityInfo.id }}</p>
+            <p><strong>Nombre de la habilidad:</strong> {{ abilityInfo.name }}</p>
+        </mat-card>
+    
+        <!-- MOVES -->
+        <mat-card id="card-moves">
+        <div id="moves">
+            <h2> Lenguajes: </h2>
+            <p *ngFor="let names of abilityInfo.names; let i = index">
+                Lenguaje {{ i + 1 }}: {{names.language.name}} 
+            </p>
+        </div>
+        </mat-card>
+
+
+        <mat-card class="mt-3" id="pokemones">
+            <h2>Algunos pokemones que la usan:</h2>
+           <div class="p-3" id="names_container">
+
+                <mat-card id="names_container_item" *ngFor="let pokemon of abilityInfo.pokemon">
+                    {{ pokemon.pokemon.name }}
+                </mat-card>
+           </div>
+
+        </mat-card>
+    </div>
+

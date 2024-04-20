@@ -1,0 +1,53 @@
+#moves{
+    margin: 10px;
+    font-size: 17px;
+}
+
+#card-moves{
+
+}
+
+#general-container{
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+#names_container{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+#names_container_item{
+    margin: 20px;
+    padding: 13px 8px;
+    width: 100px;
+    text-align: center;
+}
+
+#pokemones{
+    padding: 15px;
+}
+
+#pokemones h2{
+    text-align: center;
+}
+
+#img_sprite_main{
+
+    width: 400px;
+}
+#img_sprite_main_container{
+    display: flex;
+    justify-content: center;
+}
+
+#ability_id{
+    padding: 10px;
+}
+
+@media screen and (max-width: 547px) {
+    #img_sprite_main{
+        width: 100%;
+    }
+    
+}
